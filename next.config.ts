@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Hides the little "N" dev badge so it never shows up in a recording.
+  output: "export",
   devIndicators: false,
   images: { unoptimized: true },
 };
