@@ -7,9 +7,8 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-/** True when the visitor asked for less motion, or the page is opened with ?static=1 (Round 1 review). */
-export const prefersReducedMotion = () =>
-  typeof window !== "undefined" &&
-  (window.matchMedia("(prefers-reduced-motion: reduce)").matches || new URLSearchParams(window.location.search).has("static"));
+/** True ONLY when the page is opened with ?static=1 (layout review). The OS reduce-motion setting is never used:
+ *  it is ON by default on many Windows machines and turned the live sites into flat static pages. */
+export const prefersReducedMotion = () => typeof window !== "undefined" && new URLSearchParams(window.location.search).has("static");
 
 export { gsap, ScrollTrigger };

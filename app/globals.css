@@ -181,7 +181,7 @@ html.has-custom-cursor textarea {
   cursor: text;
 }
 
-@media (prefers-reduced-motion: reduce) {
+html.is-static {
   .grain::after { animation: none; }
 }
 
@@ -195,7 +195,7 @@ html.has-custom-cursor textarea {
 .faq > summary::-webkit-details-marker {
   display: none;
 }
-@media (prefers-reduced-motion: reduce) {
+html.is-static {
   .ticker-track { animation: none; }
 }
 

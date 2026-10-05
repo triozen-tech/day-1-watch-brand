@@ -14,7 +14,10 @@ declare global {
 /** Buttery smooth scrolling (Lenis) kept in sync with GSAP ScrollTrigger. */
 export default function SmoothScroll() {
   useEffect(() => {
-    if (prefersReducedMotion()) return;
+    if (prefersReducedMotion()) {
+      document.documentElement.classList.add("is-static"); // ?static=1: CSS loops stop too (html.is-static rules)
+      return;
+    }
 
     const lenis = new Lenis({ duration: 1.25, easing: (t) => 1 - Math.pow(1 - t, 4), smoothWheel: true });
     window.__lenis = lenis;

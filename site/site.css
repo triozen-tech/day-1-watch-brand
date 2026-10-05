@@ -158,7 +158,7 @@
   border-color: #f3ece1;
 }
 
-@media (prefers-reduced-motion: reduce) {
+html.is-static {
   .tick-hand,
   .dial-progress {
     animation: none;
